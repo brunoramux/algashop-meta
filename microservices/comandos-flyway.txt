@@ -1,0 +1,29 @@
+Configurar Plugin
+buildscript {
+	dependencies {
+		classpath 'org.flywaydb:flyway-core:11.13.0'
+		classpath 'org.flywaydb:flyway-database-postgresql:11.13.0'
+	}
+}
+
+plugins {
+	id 'org.flywaydb.flyway' version '11.13.0'
+}
+
+
+Configurar flyway.conf
+flyway.user=postgres
+flyway.password=postgres
+flyway.schemas=public
+flyway.url=jdbc:postgresql://localhost:5432/ordering
+flyway.locations=classpath:db/migration
+
+Rodar os comandos abaixo para executar as migrações do Flyway:
+
+./gradlew flywayInfo -Dflyway.configFiles=flyway.conf
+
+sudo ./gradlew -x check build flywayInfo -Dflyway.configFiles=flyway.conf
+
+sudo ./gradlew -x check build flywayValidate -Dflyway.configFiles=flyway.conf
+
+sudo ./gradlew -x check build flywayMigrate -Dflyway.configFiles=flyway.conf
