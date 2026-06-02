@@ -27,3 +27,7 @@ sudo ./gradlew -x check build flywayInfo -Dflyway.configFiles=flyway.conf
 sudo ./gradlew -x check build flywayValidate -Dflyway.configFiles=flyway.conf
 
 sudo ./gradlew -x check build flywayMigrate -Dflyway.configFiles=flyway.conf
+
+Comando para limpar o banco de dados:
+
+sudo ./gradlew -x check build flywayClean -Dflyway.configFiles=flyway.conf
