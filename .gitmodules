@@ -10,3 +10,6 @@
 [submodule "microservices/product-catalog"]
 	path = microservices/product-catalog
 	url = https://github.com/brunoramux/algashop-product-catalog.git
+[submodule "microservices/authorization-server"]
+	path = microservices/authorization-server
+	url = https://github.com/brunoramux/algashop-authorization-server.git
